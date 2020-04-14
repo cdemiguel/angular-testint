@@ -1,0 +1,13 @@
+<div class="mb-4">
+  <div *ngIf="mostrar">
+    <p>{{texto.autor}}</p>
+    <P>{{texto.mensaje}}</P>
+  </div>
+
+  <button (click)="mostrar = !mostrar" class="btn btn-outline-primary">Mostrar/Ocultar</button>
+</div>
+
+
+<ul class="list-group">
+  <li *ngFor="let item of items; let i = index" class="list-group-item">{{i+1}} - {{item}}</li>
+</ul>
