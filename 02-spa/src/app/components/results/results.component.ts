@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeroesService } from '../../services/heroes.service';
 import { Heroe } from '../../../data/heroes.data';
@@ -10,6 +10,9 @@ import { Heroe } from '../../../data/heroes.data';
 })
 export class ResultsComponent implements OnInit {
   heroes: Heroe[] = [];
+
+  @Input() heroe: any = {};
+  @Input() index: number;
 
   constructor(private _heroesService: HeroesService, private activatedRoute: ActivatedRoute) { }
 
