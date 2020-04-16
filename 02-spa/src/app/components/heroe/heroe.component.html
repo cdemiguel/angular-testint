@@ -1,1 +1,23 @@
-<p>heroe works!</p>
+<h1>{{heroe.nombre | uppercase}}</h1>
+<div class="row animated fadeIn fast">
+  <div class="col-md-4">
+    <img class="img-fluid" [src]="heroe.img">
+  </div>
+  <div class="col-md-4">
+
+    <div *ngIf="heroe.casa == 'Marvel'; else notShow">
+      <img src="assets/img/marvel_logo.png">
+    </div>
+
+    <ng-template #notShow>
+      <img src="assets/img/dc_logo.png">
+    </ng-template>
+
+    <p>{{heroe.bio}}</p>
+
+    <!-- Uso de Pipes -->
+    <small>{{heroe.aparicion | date: 'year'}}</small>
+  </div>
+</div>
+
+<a class="btn btn-outline-danger" [routerLink]="['/heroes']">Volver al listado</a>
