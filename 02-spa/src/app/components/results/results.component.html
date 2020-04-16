@@ -1,0 +1,16 @@
+<div class="animated fadeIn fast">
+  <h1>HEROES ENCONTRADOS</h1>
+  <div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
+      <img [src]="heroe.img" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{heroe.nombre}}</h5>
+        <p class="card-text">{{heroe.bio}}</p>
+        <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+        <!-- CON LINK -->
+        <a [routerLink]="['/home']" class="btn btn-outline-primary mb-2">Return to home</a>
+        <!-- CON LÓGICA -->
+      </div>
+    </div>
+  </div>
+</div>
