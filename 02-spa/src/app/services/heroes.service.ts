@@ -22,10 +22,12 @@ export class HeroesService {
     let heroesArr: Heroe[] = [];
     text = text.toLowerCase();
 
-    for (let heroe of this._heroesData) {
-      let nombre = heroe.nombre.toLowerCase();
+    for (let i = 0; i < this._heroesData.length; i++) {
+
+      let nombre = this._heroesData[i].nombre.toLowerCase();
       if (nombre.indexOf(text) >= 0) {
-        heroesArr.push(heroe);
+        this._heroesData[i].index = i;
+        heroesArr.push(this._heroesData[i]);
       }
     }
     return heroesArr;

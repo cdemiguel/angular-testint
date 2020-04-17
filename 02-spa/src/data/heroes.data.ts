@@ -4,6 +4,7 @@ export interface Heroe {
   img: string;
   aparicion: string;
   casa: string;
+  index?: number;
 }
 
 export const heroesData: Heroe[] = [

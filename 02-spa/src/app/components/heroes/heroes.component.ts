@@ -29,4 +29,8 @@ export class HeroesComponent implements OnInit {
     this.heroes = this._heroesService.getHeroes();
     console.log(this.heroes);
   }
+
+  onClickGoToHero(index: number) {
+    this.router.navigate(['/heroe', index]);
+  }
 }
